@@ -1,0 +1,28 @@
+{
+  "name": "travel-app-project---udacity",
+  "version": "1.0.0",
+  "description": "Create a travel app using Geonames for coordinates, Weatherbit for weather, and Pixabay for location images. Users input travel details to get forecasts and images. The app will be built with clean HTML/CSS, Webpack, Express, and service workers, focusing on testing and refactoring for quality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "dev": " webpack-dev-server --config webpack.dev.js --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.1",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "sass": "^1.77.8"
+  }
+}
