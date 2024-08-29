@@ -6,6 +6,28 @@
     <title>travel app planner</title>
   </head>
   <body>
-    hi
+    <!-- Form -->
+    <h1>Where are you going? and When?</h1>
+    <form onsubmit="return Client.handleSubmit(event)">
+      <div>
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" />
+      </div>
+      <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <button>Submit</button>
+    </form>
+    <!-- output -->
+    <div class="flight-data">
+      <h2 id="Rdays"></h2>
+      <p class="cityNmae"></p>
+      <p class="temp"></p>
+      <p class="max-temp"></p>
+      <p class="min-temp"></p>
+      <p class="weather"></p>
+      <div class="cityPic"></div>
+    </div>
   </body>
 </html>
