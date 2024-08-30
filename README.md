@@ -60,7 +60,7 @@ This Travel App allows users to plan their trips by providing weather forecasts 
 
 - Run unit tests for the application:
     ```bash
-    npm run test
+    npm test
     ```
 
 ### Documentation
