@@ -12,22 +12,25 @@
       <div>
         <label for="city">City</label>
         <input type="text" name="city" id="city" />
+        <div id="city-error" style="color: red"></div>
       </div>
       <div>
         <label for="date">Date</label>
         <input type="date" name="date" id="date" />
+        <div id="date-error" style="color: red"></div>
       </div>
       <button>Submit</button>
     </form>
     <!-- output -->
-    <div class="flight-data">
+    <div class="flight-data" style="display: none">
       <h2 id="Rdays"></h2>
-      <p class="cityNmae"></p>
+      <p class="cityName"></p>
       <p class="temp"></p>
       <p class="max-temp"></p>
       <p class="min-temp"></p>
       <p class="weather"></p>
       <div class="cityPic"></div>
     </div>
+    <script src="../../../dist/bundle.js"></script>
   </body>
 </html>
