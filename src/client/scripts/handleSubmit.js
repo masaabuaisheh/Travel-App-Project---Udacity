@@ -1,5 +1,6 @@
 import axios from "axios";
 import { setRdays } from "./setRdays";
+import { validateInput } from "./validateInput";
 
 const form = document.querySelector("form");
 const dateInp = document.querySelector("#date");
@@ -136,28 +137,6 @@ const updateUI = (Rdays, city, pic, weather) => {
   } else {
     console.error("Flight data element not found.");
   }
-};
-
-const validateInput = () => {
-  cityError.style.display = "none";
-  dateError.style.display = "none";
-
-  if (!cityInput.value) {
-    cityError.innerHTML = `You need to enter a name of a city`;
-    cityError.style.display = "block";
-    return false;
-  }
-  if (!dateInp.value) {
-    dateError.innerHTML = `Please enter a valid date`;
-    dateError.style.display = "block";
-    return false;
-  }
-  if (setRdays(dateInp.value) < 0) {
-    dateError.innerHTML = `Date cannot be in the past`;
-    dateError.style.display = "block";
-    return false;
-  }
-  return true;
 };
 
 export { handleSubmit };
