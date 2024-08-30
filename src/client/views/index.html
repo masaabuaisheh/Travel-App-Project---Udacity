@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel App Planner</title>
+    <title>TripTales: Crafting Your Ultimate Travel Plan</title>
   </head>
   <body>
     <!-- Form -->
-    <h1>Where are you going? and When?</h1>
+    <h1>Plan Your Next Adventure: Destination & Departure Date</h1>
+    <img src="../public/images/logo.jpg"/>
     <form onsubmit="return Client.handleSubmit(event)">
       <div>
         <label for="city">City</label>
@@ -15,7 +16,7 @@
         <div id="city-error" style="color: red"></div>
       </div>
       <div>
-        <label for="date">Date</label>
+        <label for="date">Departure Date</label>
         <input type="date" name="date" id="date" />
         <div id="date-error" style="color: red"></div>
       </div>

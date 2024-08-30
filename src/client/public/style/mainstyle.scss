@@ -1,0 +1,108 @@
+// Variables
+$primary-color: #2b3338;
+$error-color: #ff4d4d;
+$font-family: "Arial", sans-serif;
+
+// Global Styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-color;
+  margin-bottom: 40px;
+}
+
+// Form Styles
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+
+  div {
+    margin-bottom: 19px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: $primary-color;
+  }
+
+  input {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Error Messages
+#city-error,
+#date-error {
+  color: $error-color;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+// Flight Data Styles
+.flight-data {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .cityPic {
+    margin-top: 15px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
