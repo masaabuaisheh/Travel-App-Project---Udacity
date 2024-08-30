@@ -20,24 +20,35 @@ const handleSubmit = async (e) => {
     const Location = await getCity(city);
 
     if (Location.error) {
-      cityError.innerHTML = `${Location.message}`;
-      cityError.style.display = "block";
+      if (cityError) {
+        cityError.innerHTML = `${Location.message}`;
+        cityError.style.display = "block";
+      } else {
+        console.error("City error element not found.");
+      }
       return;
     }
 
-    cityError.style.display = "none";
+    if (cityError) cityError.style.display = "none";
+
     const { name, lng, lat } = Location;
 
     if (dateInp) {
       const date = dateInp.value;
       const Rdays = setRdays(date);
       const Weather = await getWeather(lng, lat, Rdays);
+
       if (Weather.error) {
-        dateError.innerHTML = `${Weather.message}`;
-        dateError.style.display = "bock";
+        if (dateError) {
+          dateError.innerHTML = `${Weather.message}`;
+          dateError.style.display = "block";
+        } else {
+          console.error("Date error element not found.");
+        }
         return;
       }
-      dateError.style.display = "none";
+
+      if (dateError) dateError.style.display = "none";
       console.log("Weather Data:", Weather);
 
       const picData = await getCityPic(name);
