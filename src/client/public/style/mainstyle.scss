@@ -52,8 +52,8 @@ form {
   }
 
   button {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 200px;
     padding: 12px;
     background-color: $primary-color;
     color: #fff;
@@ -61,6 +61,7 @@ form {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-right: 10px;
 
     &:hover {
       background-color: darken($primary-color, 10%);
@@ -68,9 +69,17 @@ form {
   }
 }
 
+// Button Container Styles
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 // Error Messages
 #city-error,
-#date-error {
+#start-date-error,
+#end-date-error {
   color: $error-color;
   font-size: 14px;
   margin-top: 5px;
@@ -94,6 +103,11 @@ form {
   p {
     font-size: 16px;
     margin: 5px 0;
+  }
+
+  #trip-length {
+    font-weight: bold;
+    color: $primary-color;
   }
 
   .cityPic {

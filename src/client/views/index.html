@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TripTales: Crafting Your Ultimate Travel Plan</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Form -->
-    <h1>Plan Your Next Adventure: Destination & Departure Date</h1>
-    <img src="../public/images/logo.jpg"/>
+    <h1>Plan Your Next Adventure: Destination & Dates</h1>
     <form onsubmit="return Client.handleSubmit(event)">
       <div>
         <label for="city">City</label>
@@ -16,20 +16,33 @@
         <div id="city-error" style="color: red"></div>
       </div>
       <div>
-        <label for="date">Departure Date</label>
-        <input type="date" name="date" id="date" />
-        <div id="date-error" style="color: red"></div>
+        <label for="start-date">Departure Date</label>
+        <input type="date" name="start-date" id="start-date" />
+        <div id="start-date-error" style="color: red"></div>
       </div>
-      <button>Submit</button>
+      <div>
+        <label for="end-date">End Date</label>
+        <input type="date" name="end-date" id="end-date" />
+        <div id="end-date-error" style="color: red"></div>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Add Trip</button>
+        <button type="button" onclick="return Client.printTrip()">Print</button>
+        <button type="button" onclick="return Client.removeTrip()">
+          Remove Trip
+        </button>
+      </div>
     </form>
     <!-- Output -->
-    <div class="flight-data" style="display: none">
+    <div class="flight-data" id="trip-data">
       <h2 id="Rdays"></h2>
       <p class="cityName"></p>
       <p class="temp"></p>
       <p class="max-temp"></p>
       <p class="min-temp"></p>
       <p class="weather"></p>
+      <p id="trip-length"></p>
+      <!-- Display trip length here -->
       <div class="cityPic"></div>
     </div>
     <!-- Bundle JS -->
