@@ -1,7 +1,7 @@
-const common = require("./webpack.common.js");
-const { merge } = require("webpack-merge");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const path = require("path");
+const common = require("./webpack.common.js"),
+  { merge } = require("webpack-merge"),
+  CssMinimizerPlugin = require("css-minimizer-webpack-plugin"),
+  path = require("path");
 
 module.exports = merge(common, {
   mode: "development",
@@ -11,18 +11,6 @@ module.exports = merge(common, {
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192, // Convert images < 8kb to base64 strings
-              name: "images/[name].[hash:8].[ext]",
-            },
-          },
-        ],
       },
     ],
   },
@@ -34,7 +22,11 @@ module.exports = merge(common, {
     clean: true,
   },
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`,
+      new CssMinimizerPlugin(),
+    ],
     minimize: true,
   },
 });

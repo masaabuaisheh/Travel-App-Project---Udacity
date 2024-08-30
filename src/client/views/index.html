@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TripTales: Crafting Your Ultimate Travel Plan</title>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Form -->
@@ -17,13 +16,8 @@
       </div>
       <div>
         <label for="start-date">Departure Date</label>
-        <input type="date" name="start-date" id="start-date" />
-        <div id="start-date-error" style="color: red"></div>
-      </div>
-      <div>
-        <label for="end-date">End Date</label>
-        <input type="date" name="end-date" id="end-date" />
-        <div id="end-date-error" style="color: red"></div>
+        <input type="date" name="date" id="date" />
+        <div id="date-error" style="color: red"></div>
       </div>
       <div class="form-buttons">
         <button type="submit">Add Trip</button>
@@ -41,8 +35,6 @@
       <p class="max-temp"></p>
       <p class="min-temp"></p>
       <p class="weather"></p>
-      <p id="trip-length"></p>
-      <!-- Display trip length here -->
       <div class="cityPic"></div>
     </div>
     <!-- Bundle JS -->

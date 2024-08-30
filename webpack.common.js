@@ -1,50 +1,38 @@
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const path = require("path");
+const webpack = require("webpack"),
+  htmlWebpackPlugin = require("html-webpack-plugin"),
+  { CleanWebpackPlugin } = require("clean-webpack-plugin"),
+  CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: "./src/client/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true, // Ensures old files are cleaned automatically
-  },
+  entry: ["./src/client/index.js"],
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: "/.js$/",
         exclude: /node_modules/,
-        use: "babel-loader",
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
-        type: "asset/resource", // Uses Webpack 5's asset modules
-        generator: {
-          filename: "images/[name].[hash:8][ext]", // Output path for images
-        },
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        loader: "babel-loader",
       },
     ],
   },
+
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`,
+      new CssMinimizerPlugin(),
+    ],
     minimize: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new htmlWebpackPlugin({
       template: "./src/client/views/index.html",
-      filename: "index.html",
+      filename: "./index.html",
     }),
     new CleanWebpackPlugin({
       // Simulate the removal of files
-      dry: false,
+      dry: true,
       // Write Logs to Console
-      verbose: true,
+      verbose: false,
       // Automatically remove all unused webpack assets on rebuild
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
