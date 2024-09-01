@@ -21,8 +21,10 @@ This Travel App allows users to plan their trips by providing weather forecasts 
 
 ### Prerequisites
 
-- Node.js
-- npm (Node Package Manager)
+- **Node.js**: Version 20.11.1
+- **npm**: Node Package Manager
+
+> **Note**: The project is developed and tested on Node.js version 20.11.1. It is important to use this version or ensure compatibility to avoid any issues during setup and execution.
 
 ### Installation
 
@@ -60,7 +62,7 @@ This Travel App allows users to plan their trips by providing weather forecasts 
 
 - Run unit tests for the application:
     ```bash
-    npm test
+    npm run test
     ```
 
 ### Documentation
@@ -75,4 +77,3 @@ This Travel App allows users to plan their trips by providing weather forecasts 
 - Implement additional features like multiple destinations, hotel/flight data, and local storage.
 - Enhance the user experience with improved UX and UI design.
 - Optimize performance and refactor code for better maintainability.
-
