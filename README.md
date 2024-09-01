@@ -30,8 +30,8 @@ This Travel App allows users to plan their trips by providing weather forecasts 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/travel-app.git
-    cd travel-app
+    git clone https://github.com/masaabuaisheh/Travel-App-Project---Udacity.git
+    cd Travel-App-Project---Udacity
     ```
 
 2. Install dependencies:
